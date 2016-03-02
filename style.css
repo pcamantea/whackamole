@@ -1,0 +1,38 @@
+body {
+	background-color:#F0F0F0;
+}
+
+.board {
+    width: 500px;
+    padding: 6px;
+	margin: auto;
+}
+
+.hole {
+    border: 2px solid black;
+    width: 67px;
+    height: 60px;
+	border-radius:25px;
+    display: inline-block;
+    margin: 12px;
+    background-color: black;
+}
+
+.hole.mole {
+    /*background-image: url("images/mole.png");*/
+    background-color: green;
+}
+
+.hole.deadMole {
+    /*background-image: url("images/clicked.png");*/
+    background-color: orange;   
+}
+
+.footer {
+	font-family:"Arial Black", Gadget, sans-serif;
+	font-size:30px;
+	font-weight:bold;
+}
+
+#points {
+}
