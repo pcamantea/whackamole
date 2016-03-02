@@ -12,4 +12,5 @@
     </author>
 	<preference name="orientation" value="portrait" />
     <access origin="*" />
+	<icon src="icon.png" />
 </widget>
