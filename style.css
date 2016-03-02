@@ -3,15 +3,16 @@ body {
 }
 
 .board {
-    width: 500px;
+    width: 400px;
     padding: 6px;
 	margin: auto;
+	border:1px solid black;
 }
 
 .hole {
     border: 2px solid black;
-    width: 67px;
-    height: 60px;
+    width: 68px;
+    height: 68px;
 	border-radius:25px;
     display: inline-block;
     margin: 12px;
