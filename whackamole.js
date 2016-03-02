@@ -1,5 +1,11 @@
-$( document ).ready(function() {
+var phonegapReady = function(){
 	startGameScope();
+}
+document.addEventListener("deviceready", phonegapReady, false);
+
+
+$( document ).ready(function() {
+	//startGameScope();
 });
 
 startGameScope = function() {
