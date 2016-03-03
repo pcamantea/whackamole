@@ -19,6 +19,8 @@ body {
 	border-radius:25px;
     display: inline-block;
     margin: 10px;
+	margin-top:7px;
+	margin-bottom:7px;
 	background-image: url("images/hole.png");
 	background-size: 68px 68px;
     background-repeat: no-repeat;
@@ -36,7 +38,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.footer {
+.GameInfo {
 	font-family:"Arial Black", Gadget, sans-serif;
 	font-size:30px;
 	font-weight:bold;
