@@ -11,6 +11,7 @@
         Pedro Amantea
     </author>
 	<preference name="orientation" value="portrait" />
+	<preference name="DisallowOverscroll" value="true" />
     <access origin="*" />
 	<icon src="icon.png" />
 </widget>
