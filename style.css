@@ -1,5 +1,7 @@
 body {
 	background-color:#F0F0F0;
+	overflow: hidden;
+	-ms-content-zooming: none;
 }
 
 .board {
