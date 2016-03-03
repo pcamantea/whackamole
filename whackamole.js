@@ -1,7 +1,5 @@
 var phonegapReady = function(){
 	var viewportScale = 1 / window.devicePixelRatio;
-	$("#viewport").attr("content","user-scalable=no, initial-scale="+viewportScale+", minimum-scale=0.2, maximum-scale=2, width=device-width, target-densitydpi=device-dpi");
-	alert('does this work?');
 	startGameScope();
 }
  
@@ -15,7 +13,8 @@ startGameScope = function() {
 	// hold reference to hole from previous round to remove the style and click handler
 	var $previousHole = null;
 	var $increment = 1;
-	var $time = 1500;
+	var $initialTime = 1300;
+	var $time = $initialTime;
 	var $decrementPerLevel = 150;
 	
 	playNextRound = function() {
@@ -43,15 +42,14 @@ startGameScope = function() {
 				
 				if ((newPoint % 10) == 0)
 				{
-					if (newLevel < 8)
+					if (newLevel <= 8)
 					{
-						console.log('changing level');
 						$time -= $decrementPerLevel;
 					}
 					else
 					{
-						$time = 1000;
-						alert('You beat the game! Good job');
+						$time = $initialTime;
+						alert('You killed all the moles :(\nGood job! I guess...');
 						$("#level").text(1);
 						$("#points").text(0);
 					}
