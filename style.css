@@ -2,12 +2,15 @@ body {
 	background-color:#F0F0F0;
 	overflow: hidden;
 	-ms-content-zooming: none;
+	margin:0;
+	padding:0;
 }
 
 .board {
+	border:0;
     width: 400px;
-    padding: 6px;
 	margin: auto;
+	padding:0;
 }
 
 .hole {
@@ -15,7 +18,7 @@ body {
     height: 68px;
 	border-radius:25px;
     display: inline-block;
-    margin: 12px;
+    margin: 10px;
 	background-image: url("images/hole.png");
 	background-size: 68px 68px;
     background-repeat: no-repeat;
