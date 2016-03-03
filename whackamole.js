@@ -1,6 +1,7 @@
 var phonegapReady = function(){
 	var viewportScale = 1 / window.devicePixelRatio;
 	$("#viewport").attr("content","user-scalable=no, initial-scale="+viewportScale+", minimum-scale=0.2, maximum-scale=2, width=device-width, target-densitydpi=device-dpi");
+	alert('does this work?');
 	startGameScope();
 }
  
@@ -13,7 +14,9 @@ $( document ).ready(function() {
 startGameScope = function() {
 	// hold reference to hole from previous round to remove the style and click handler
 	var $previousHole = null;
-	var $increment = 10;
+	var $increment = 1;
+	var $time = 1500;
+	var $decrementPerLevel = 150;
 	
 	playNextRound = function() {
 			// get all holes except the one currently active
@@ -30,8 +33,29 @@ startGameScope = function() {
 			
 			tapHandler = function () {
 				// increment points
-				var currentScore = $("#points").text();
-				$("#points").text($increment + Number(currentScore));
+				var currentPoint = $("#points").text();
+				var newPoint = $increment + Number(currentPoint);
+				$("#points").text(newPoint);
+				
+				// Update level
+				var newLevel = parseInt(parseInt(newPoint / $increment) / 10) + 1;
+				$("#level").text(newLevel);
+				
+				if ((newPoint % 10) == 0)
+				{
+					if (newLevel < 8)
+					{
+						console.log('changing level');
+						$time -= $decrementPerLevel;
+					}
+					else
+					{
+						$time = 1000;
+						alert('You beat the game! Good job');
+						$("#level").text(1);
+						$("#points").text(0);
+					}
+				}
 				
 				// change hole style to smashed and remove tap handler
 				$nextHole.addClass("deadMole").removeClass("mole").off("click", tapHandler); 
@@ -44,7 +68,7 @@ startGameScope = function() {
 			$previousHole = $nextHole.addClass("mole").on("click", tapHandler);
 		  
 			// wait for 1 second and play next round
-			setTimeout(playNextRound, 1000);
+			setTimeout(playNextRound, $time);
 	}
 	
 	playNextRound();

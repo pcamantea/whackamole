@@ -11,23 +11,26 @@ body {
 }
 
 .hole {
-    border: 2px solid black;
     width: 68px;
     height: 68px;
 	border-radius:25px;
     display: inline-block;
     margin: 12px;
-    background-color: black;
+	background-image: url("images/hole.png");
+	background-size: 68px 68px;
+    background-repeat: no-repeat;
 }
 
 .hole.mole {
-    /*background-image: url("images/mole.png");*/
-    background-color: green;
+    background-image: url("images/holeMole.png");
+	background-size: 68px 68px;
+    background-repeat: no-repeat;
 }
 
 .hole.deadMole {
-    /*background-image: url("images/clicked.png");*/
-    background-color: orange;   
+    background-image: url("images/deadMole.png");
+	background-size: 68px 68px;
+    background-repeat: no-repeat;
 }
 
 .footer {
