@@ -2,10 +2,12 @@
 <script src="jquerymobile.js"></script>
 <script type="text/javascript" src="whackamole.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="bootstrap.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 <link rel="stylesheet" type="text/css" href="jquerymobile.css"/>
+<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
 <head>
-	<meta name="viewport" content="user-scalable=no, initial-scale=0.9, maximum-scale=0.9, minimum-scale=0.9, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=0.9, maximum-scale=0.9, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
 </head>
 
 <body>
@@ -17,7 +19,7 @@
    <div data-role="main" class="ui-content">
     <p>Whack-a-Mole game for PROG8110</p>
 	<p>Computer Application Development - 2016</p>
-    <a href="#pagetwo" data-transition="slide">Start Game!</a>
+    <a href="#pagetwo" data-transition="slide" class="ui-btn">Start Game!</a>
   </div>
 
   <div data-role="footer">
@@ -30,41 +32,43 @@
 		Points: <span id="points">0</span> &nbsp; Level: <span id="level">1</span>
 	</div>
 	<div class="board">
-		<div class="row">
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-		</div>
-		<div class="row">
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-		</div>
-		<div class="row">
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-		</div>
-		<div class="row">
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-		</div>
-		<div class="row">
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-		</div>
-		<div class="row">
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
-			<div class="hole"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+				<div class="col-xs-3"><div class="hole"></div></div>
+			</div>
 		</div>
 	</div>
 </div> 

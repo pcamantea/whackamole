@@ -8,8 +8,8 @@ body {
 
 .board {
 	border:0;
-    width: 400px;
-	margin: auto;
+    /*width: 400px;
+	margin: auto;*/
 	padding:0;
 }
 
@@ -18,7 +18,7 @@ body {
     height: 68px;
 	border-radius:25px;
     display: inline-block;
-    margin: 10px;
+   /*margin: 10px;*/
 	margin-top:7px;
 	margin-bottom:7px;
 	background-image: url("images/hole.png");
