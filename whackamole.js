@@ -6,7 +6,7 @@ var phonegapReady = function(){
 document.addEventListener("deviceready", phonegapReady, false);
 document.addEventListener("touchmove", function(event) { event.preventDefault(); });
 
-$( document ).ready(function() {startGameScope();
+$( document ).ready(function() {
 });
 
 startGameScope = function() {
