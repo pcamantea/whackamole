@@ -48,5 +48,7 @@ body {
 }
 
 #pagetwo{
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
 	height:100%;
 }
