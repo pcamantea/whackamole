@@ -52,3 +52,8 @@ body {
     background-repeat: no-repeat;
 	height:100%;
 }
+
+.ranking{
+	/* todo didn't work */
+	vertical-align: middle;
+}

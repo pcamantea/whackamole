@@ -1,6 +1,20 @@
+// memo: to show ranking,
+// set the current point to gPoint and call setRanking() and pageone
+// window.location.href = '#pageone';
+var gPoint = -1;
+
 var phonegapReady = function(){
 	var viewportScale = 1 / window.devicePixelRatio;
 	startGameScope();
+	setRanking();
+
+	// todo: delete this. this is just sample code
+	$("#giveup").click(function() {
+		// maybe need to stop all timers.
+		gPoint = Number($("#points").text());
+		setRanking();
+		window.location.href = '#pageone';
+	});
 }
  
 document.addEventListener("deviceready", phonegapReady, false);
@@ -71,3 +85,4 @@ startGameScope = function() {
 	
 	playNextRound();
 }
+

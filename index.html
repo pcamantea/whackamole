@@ -1,5 +1,7 @@
 <script src="jquery.js"></script>
 <script src="jquerymobile.js"></script>
+<script type="text/javascript" src="dbAPI.js"></script>
+<script type="text/javascript" src="ranking.js"></script>
 <script type="text/javascript" src="whackamole.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="bootstrap.js"></script>
@@ -15,15 +17,47 @@
   <div data-role="header">
     <h1>Whack-a-Mole jQuery</h1>
   </div>
+	<div data-role="main" class="ui-content">
+	  <h2>Ranking</h2>
+		<div class="container ranking">
+			<div class="row">
+				<div class="col-xs-6" id="name1"></div>
+				<div class="col-xs-6" id="score1"></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6" id="name2"></div>
+				<div class="col-xs-6" id="score2"></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6" id="name3"></div>
+				<div class="col-xs-6" id="score3"></div>
+			</div>
+		</div>
 
-   <div data-role="main" class="ui-content">
+		<div id="showResult">
+			<hr>
+			<h3>Your score</h3>
+			<div class="container ranking">
+				<div id="scoreCurrent"></div>
+			</div>
+			<div id="boardRanking">
+				<hr>
+				<h3>Your name</h3>
+				<div class="container ranking">
+					<input type="text" id="nameCurrent">
+				</div>
+			</div>
+			<hr>
+		</div>
+		<button class="ui-btn" id="startGame">Start Game!</button>
+
+    <hr>
     <p>Whack-a-Mole game for PROG8110</p>
-	<p>Computer Application Development - 2016</p>
-    <a href="#pagetwo" data-transition="slide" class="ui-btn">Start Game!</a>
+		<p>Computer Application Development - 2016</p>
   </div>
 
   <div data-role="footer">
-    <h1>Pedro Amantea &copy; 2016</h1>
+    <h1>Pedro, Mike and Takeshi &copy; 2016</h1>
   </div>
 </div> 
 
@@ -31,6 +65,9 @@
 	<div class="GameInfo">
 		Points: <span id="points">0</span> &nbsp; Level: <span id="level">1</span>
 	</div>
+	<!-- todo: delete -->
+	<button class="ui-btn" id="giveup">Give up</button>
+	<!-- !todo: delete -->
 	<div class="board">
 		<div class="container">
 			<div class="row">
