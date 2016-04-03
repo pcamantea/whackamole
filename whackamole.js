@@ -14,7 +14,7 @@ var phonegapReady = function(){
 }
  
 document.addEventListener("deviceready", phonegapReady, false);
-document.addEventListener("touchmove", function(event) { event.preventDefault(); });
+//document.addEventListener("touchmove", function(event) { event.preventDefault(); });
 
 $( document ).ready(function() {
 });
