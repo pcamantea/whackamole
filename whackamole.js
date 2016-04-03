@@ -82,10 +82,7 @@ startGameScope = function() {
 					}
 					else
 					{
-						$time = $initialTime;
-						alert('You killed all the moles :(\nGood job! I guess...');
-						$("#level").text(1);
-						$("#points").text(0);
+						gameOver();
 					}
 				}
 				
