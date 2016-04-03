@@ -36,6 +36,10 @@ var setRanking = function() {
 			$("#startGame").text("Restart Game");
 		} else {
 			window.location.href = '#pagetwo';
+			
+			if (!GAME_ON) {
+				startGameScope();
+			}
 		}
 	});
 

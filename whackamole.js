@@ -1,3 +1,6 @@
+var GAME_ON = true;
+var currentTimeout;
+
 var phonegapReady = function(){
 	var viewportScale = 1 / window.devicePixelRatio;
 	startGameScope();
@@ -9,6 +12,10 @@ var phonegapReady = function(){
 		gPoint = Number($("#points").text());
 		setRanking();
 		window.location.href = '#pageone';
+		
+		GAME_ON = false;
+		clearTimeout(currentTimeout);
+		resetGameValues();
 	});
 }
  
@@ -18,6 +25,12 @@ document.addEventListener("touchmove", function(event) { event.preventDefault();
 $( document ).ready(function() {
 });
 
+resetGameValues = function() {
+	$(".hole").removeClass("mole").off("click");
+	$("#points").text('0');
+	$("#level").text('1');
+}
+
 startGameScope = function() {
 	// hold reference to hole from previous round to remove the style and click handler
 	var $previousHole = null;
@@ -26,7 +39,13 @@ startGameScope = function() {
 	var $time = $initialTime;
 	var $decrementPerLevel = 150;
 	
+	GAME_ON = true;
+	
 	playNextRound = function() {
+			if (!GAME_ON) {
+				return;
+			}
+			
 			// get all holes except the one currently active
 			var $allHoles = $(".hole").not(".mole,.deadMole");
 			
@@ -75,7 +94,7 @@ startGameScope = function() {
 			$previousHole = $nextHole.addClass("mole").on("click", tapHandler);
 		  
 			// wait for 1 second and play next round
-			setTimeout(playNextRound, $time);
+			currentTimeout = setTimeout(playNextRound, $time);
 	}
 	
 	playNextRound();
