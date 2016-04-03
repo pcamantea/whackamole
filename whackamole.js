@@ -1,8 +1,3 @@
-// memo: to show ranking,
-// set the current point to gPoint and call setRanking() and pageone
-// window.location.href = '#pageone';
-var gPoint = -1;
-
 var phonegapReady = function(){
 	var viewportScale = 1 / window.devicePixelRatio;
 	startGameScope();
