@@ -2,8 +2,8 @@
 // set the current point to gPoint and call setRanking() and pageone
 // window.location.href = '#pageone';
 // also need to stop all the timers
-//var gPoint = -1;
-var gPoint = 10;
+var gPoint = -1;
+//var gPoint = 10;
 var sDOMCurrentNameRanking;
 
 var setRanking = function() {
