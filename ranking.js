@@ -29,7 +29,7 @@ var setRanking = function() {
 	displayRanking(ranking);
 
 
-	$("#startGame").click(function() {
+	$("#startGame").off("click").on("click", (function() {
 		if($("#startGame").text() === "Submit") {
 			postScore($("#nameCurrent").val(), gPoint);
 			$("#boardRanking").hide();
@@ -41,7 +41,7 @@ var setRanking = function() {
 				startGameScope();
 			}
 		}
-	});
+	}));
 
 	$('#nameCurrent').keyup(function() {
 		var orgText = $("#nameCurrent").val();

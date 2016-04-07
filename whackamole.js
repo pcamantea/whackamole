@@ -20,13 +20,14 @@ $( document ).ready(function() {
 });
 
 gameOver = function() {
+	clearTimeout(currentTimeout);
+	
 	// maybe need to stop all timers.
 	gPoint = Number($("#points").text());
 	setRanking();
 	window.location.href = '#pageone';
 	
 	GAME_ON = false;
-	clearTimeout(currentTimeout);
 	resetGameValues();
 }
 
@@ -34,7 +35,7 @@ resetGameValues = function() {
 	$(".hole").removeClass("mole").off("click").on("click", missClickHandler);
 	$("#points").text('0');
 	$("#level").text('1');
-	$("#tries").text('50');
+	$("#tries").text('20');
 }
 
 startGameScope = function() {
