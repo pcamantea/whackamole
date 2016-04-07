@@ -7,49 +7,49 @@ var gPoint = -1;
 var sDOMCurrentNameRanking;
 
 var setRanking = function() {
-	var ranking = getRanking();
-	//alert(ranking[0].name);
 
-	if (gPoint >= 0) {
-		$("#showResult").show();
-		if (gPoint > ranking[2].score) {
-			$("#nameCurrent").val("");
-			$("#boardRanking").show();
-			$("#startGame").text("Submit");
-		} else {
-			$("#boardRanking").hide();
-			$("#startGame").text("Restart Game");
-		}
-	} else {
-		$("#showResult").hide();
-		$("#startGame").text("Start Game");
-	}
+	// getRanking is asynchronous and will call the callback with the ranking array
+	getRanking(function (ranking) { 
+					if (gPoint >= 0) {
+						$("#showResult").show();
+						if (gPoint > ranking[2].score) {
+							$("#nameCurrent").val("");
+							$("#boardRanking").show();
+							$("#startGame").text("Submit");
+						} else {
+							$("#boardRanking").hide();
+							$("#startGame").text("Restart Game");
+						}
+					} else {
+						$("#showResult").hide();
+						$("#startGame").text("Start Game");
+					}
 
-	$("#scoreCurrent").text(gPoint);
-	displayRanking(ranking);
+					$("#scoreCurrent").text(gPoint);
+					displayRanking(ranking);
 
+					$("#startGame").off("click").on("click", (function() {
+						if($("#startGame").text() === "Submit") {
+							postScore($("#nameCurrent").val(), gPoint);
+							$("#boardRanking").hide();
+							$("#startGame").text("Restart Game");
+						} else {
+							window.location.href = '#pagetwo';
+							
+							if (!GAME_ON) {
+								startGameScope();
+							}
+						}
+					}));
 
-	$("#startGame").off("click").on("click", (function() {
-		if($("#startGame").text() === "Submit") {
-			postScore($("#nameCurrent").val(), gPoint);
-			$("#boardRanking").hide();
-			$("#startGame").text("Restart Game");
-		} else {
-			window.location.href = '#pagetwo';
-			
-			if (!GAME_ON) {
-				startGameScope();
-			}
-		}
-	}));
-
-	$('#nameCurrent').keyup(function() {
-		var orgText = $("#nameCurrent").val();
-		orgText = orgText.toUpperCase ();
-		orgText = orgText.slice(0, 3);
-		$("#nameCurrent").val(orgText);
-		$(sDOMCurrentNameRanking).text(orgText);
-	});
+					$('#nameCurrent').keyup(function() {
+						var orgText = $("#nameCurrent").val();
+						orgText = orgText.toUpperCase ();
+						orgText = orgText.slice(0, 3);
+						$("#nameCurrent").val(orgText);
+						$(sDOMCurrentNameRanking).text(orgText);
+					});
+			});
 }
 
 var displayRanking = function(ranking) {
