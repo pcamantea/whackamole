@@ -9,8 +9,6 @@ var phonegapReady = function(){
 	// add misclick handler on all holes
 	$(".hole").on("click", missClickHandler);
 	
-	// todo: delete this. this is just sample code
-	$("#giveup").click(gameOver);
 }
  
 document.addEventListener("deviceready", phonegapReady, false);
